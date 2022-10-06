@@ -131,6 +131,15 @@ async def youtube_dl_call_back(bot, update):
     # command_to_exec.append("--quiet")
     command_to_exec.append("--restrict-filenames")
     #
+    if "moly.cloud" in youtube_dl_url:
+        command_to_exec.append("--referer")
+        command_to_exec.append("https://vidmoly.to/")
+    if "closeload" in youtube_dl_url:
+        command_to_exec.append("--referer")
+        command_to_exec.append("https://closeload.com/")
+    if "mail.ru" in youtube_dl_url:
+        command_to_exec.append("--referer")
+        command_to_exec.append("https://my.mail.ru/")
     if "hotstar" in youtube_dl_url:
         command_to_exec.append("--geo-bypass-country")
         command_to_exec.append("IN")
